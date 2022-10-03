@@ -1,0 +1,21 @@
+{
+    "name": "족보닷컴 다운로더",
+    "description": "족보닷컴에서 열람하고 있는 기출문제를 pdf로 다운로드합니다.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "content_scripts": [{
+        "matches": ["https://www.zocbo.com/PDFVIEWER/WEB/*"],
+        "js": ["jquery.js", "jspdf.js", "content.js"]
+    }],
+    "permissions": [
+        "tabs",
+        "contextMenus"
+    ]
+}
